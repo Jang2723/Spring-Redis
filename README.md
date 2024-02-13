@@ -1,4 +1,5 @@
 ## Redis 명령어 모음
+```sql
 -- Map<String, String> map = new HashMap<>;
 SET greeting "Hello Redis"
 GET greeting
@@ -99,4 +100,6 @@ DEL students
 
 -- FLUSHDB 전체 삭제
 FLUSHDB
+
+```
 
