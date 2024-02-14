@@ -2,7 +2,7 @@ package com.example.redis;
 
 import com.example.redis.dto.ItemDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.repository.query.Param;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +32,15 @@ public class ItemController {
         Long id
     ) {
         return itemService.readOne(id);
+    }
+
+    @PostMapping("{id}/purchase")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void purchase(
+            @PathVariable("id")
+            Long id
+    ){
+        itemService.purchase(id);
     }
 
 }

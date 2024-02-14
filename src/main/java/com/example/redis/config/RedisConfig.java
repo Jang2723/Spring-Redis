@@ -40,4 +40,14 @@ public class RedisConfig {
         template.setDefaultSerializer(RedisSerializer.json());
         return template;
     }
+
+    @Bean
+    public RedisTemplate<String, ItemDto> rankTemplate(
+            RedisConnectionFactory connectionFactory
+    ){
+        RedisTemplate<String, ItemDto> template = new RedisTemplate<>();
+        template.setConnectionFactory(connectionFactory);
+        template.setDefaultSerializer(RedisSerializer.json());
+        return template;
+    }
 }
